@@ -1,0 +1,43 @@
+<!--<js-menu2>-->
+<!--<router-outlet></router-outlet>-->
+<!--<js-candidateinfo></js-candidateinfo>
+	<js-jobinfo></js-jobinfo>
+</js-menu2>-->
+
+
+<div class="container">
+	<div class="page-header">
+		<h1>Job Portal<span class="pull-right label label-default"></span></h1>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel with-nav-tabs panel-default">
+				<div class="panel-heading">
+					<ul class="nav nav-tabs">
+						<li class="active">
+
+							<a [routerLink]="['/candidateinfo']" data-toggle="tab">Candidate Info</a>
+						</li>
+						<li>
+
+							<a [routerLink]="['/jobinfo']" data-toggle="tab">Job info</a>
+						</li>
+
+					</ul>
+				</div>
+				<div class="panel-body">
+					<div class="tab-content">
+						<div class="tab-pane fade in active" style="height:auto">
+
+							<router-outlet></router-outlet>
+						</div>
+					</div>
+				</div>
+				<div class="panel-footer">
+					<div style="height:20px"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

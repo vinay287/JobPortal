@@ -1,0 +1,50 @@
+﻿	<form name="jobinfo" (ngSubmit)="SaveJobInfo()">
+		<div class="container-fluid">
+
+
+			<div class="row">
+				<div class="col-lg-2">
+					<h4>Job-Type</h4>
+				</div>
+				<div class="col-lg-9">
+					<h4>
+						<label *ngFor="let item of jobtype" class="radio-inline">
+							<input type="radio" name="options" (click)="model.options = item"
+								   [checked]="item === model.options">
+							{{item}}
+						</label>
+					</h4>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-6">
+					<js-skills id="primary" [title]="skillsTitlePrimary"  [inComingSkills]="outGoingSkills" [isPrimaryskill]="true" 
+							   (outputSkills)="onSkillsReceived($event)"  [candidateId]="candidateId" ></js-skills>
+				</div>
+				<div class="col-lg-6">
+					<js-skills id="secondary" [title]="skillsTitleSecondary" [inComingSkills]="outGoingSkills"  [isPrimaryskill]="false" 
+							   (outputSkills)="onSkillsReceived($event)"  [candidateId]="candidateId" ></js-skills>
+				</div>
+			</div>
+
+			<div class="row">
+				<js-locations (locationValue)="OnlocationValueReceived($event)"></js-locations>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-6">
+					<span style="color:red">{{errormessage}}</span>
+				</div>
+
+			</div>
+			<div class="row">
+				<div class="col-lg-2">
+					<input type="submit" value="Save" class="btn btn-success"  />
+				</div>
+			</div>
+
+
+
+		</div>
+	</form>

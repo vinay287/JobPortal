@@ -1,0 +1,42 @@
+﻿
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-5">
+			<div class="panel panel-default">
+				<header class="panel-heading">
+					<h4 class="panel-title">{{skillheading}}</h4>
+				</header>
+				<div class="panel-body">
+					<table class='table'>
+						<thead>
+							<tr>
+								<th>Skill Name</th>
+								<th>Experience</th>
+							</tr>
+						</thead>
+						<tbody *ngIf='skills && skills.length'>
+							<tr *ngFor='let skill of skills'>
+								<td>{{ skill.name}} </td>
+								<td>{{ skill.YearofEx }} years</td>
+								<td><a id="{{skill}}" class="btn btn-danger" (click)="deleteRow(this.skill)">X</a></td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td><input type="text" name="skillname" [(ngModel)]="skillname" class="form-control" /></td>
+								<td><input type="text" name="exp" [(ngModel)]="exp" class="form-control" /></td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+				<div class="panel-footer">
+					<div name="add" class="btn btn-primary" (click)="addNewRow()">Add</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+

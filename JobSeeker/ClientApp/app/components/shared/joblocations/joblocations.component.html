@@ -1,0 +1,22 @@
+﻿<div class="container">
+	<div class="row">
+		<div class="col-lg-4">
+			<h4>Job Locations</h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-2">
+			<select class="form-control" [(ngModel)]="selectedVal" (change)='onChange()' required>
+				<option *ngFor="let location of locations" [ngValue]="location.id">
+					<!--[ngValue]="location.id"
+						 [(ngModel)]="selectedlocation" (ngModelChange)="changeLocation($event)"
+						
+						-->
+					{{location.name}}
+				</option>
+			</select>
+		</div>
+	</div>
+	
+	
+</div>
